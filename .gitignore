@@ -1,0 +1,42 @@
+# Ignore build results
+bin/
+obj/
+*.dll
+*.exe
+
+# Ignore test results
+TestResults/
+*.trx
+
+# Ignore reports
+Reports/
+!Reports/README.md
+
+# IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+*.csproj.user
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Playwright browsers and cache
+.playwright/
+
+# Logs
+*.log
+
+# Sensitive data
+appsettings.local.json
+appsettings.*.json
+!appsettings.json
+
+# Generated files
+.runsettings.user
