@@ -6,5 +6,5 @@ public interface IHomePage
 {
     Task ValidateElementsVissibility();
     Task LogoutAsync();
-    Task NavigateToAsync(string url);
+    Task NavigateToHomeAsync();
 }

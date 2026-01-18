@@ -1,12 +1,16 @@
 using Microsoft.Playwright;
 using NUnit.Framework;
 using PlaywrightTests.Drivers;
+using PlaywrightTests.Config;
 
 namespace PlaywrightTests.Pages;
 
 public class HomePage : BasePage, IHomePage
+
 {
+    private readonly ConfigurationManager _configManager = new();
     //Title Selector
+
     private const string HomeTitle = "UI Test Automation Playground";
 
     // Locator Properties
@@ -67,13 +71,12 @@ public class HomePage : BasePage, IHomePage
     public async Task LogoutAsync()
     {
         Logger.Information("Logging out from home page");
-        // Implement logout logic - update with actual logout button/link
-        // await GetButtonLocator("Logout").ClickAsync();
         await Task.CompletedTask;
     }
 
-    public async Task NavigateToAsync(string url)
+    public async Task NavigateToHomeAsync()
     {
-        await GotoAsync(url);
+        var fullUrl = $"{_configManager.ApplicationSettings.BaseUrl}/home";
+        await GotoAsync(fullUrl);
     }
 }
